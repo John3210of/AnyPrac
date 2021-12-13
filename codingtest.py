@@ -1,25 +1,42 @@
-# w,h,b =map(int,input().split()) #def
-
-n = int(input())  #개수를 입력받아 n에 정수로 저장
-d = [[0 for col in range(19)] for row in range(19)]
-
+h, w = map(int, input().split())
+n = int(input())
+arr = [[0 for col in range(w)] for row in range(h)]
 
 for i in range(n):
-  x,y = map(int,input().split())
-  d[int(x-1)][int(y-1)]=1
+    l, d, x, y = map(int, input().split())
+    if d == 0:
+        for j in range(l):
+            arr[x - 1][y - 1 + j] = 1
+    else:
+        for k in range(l):
+            arr[x - 1 + k][y - 1] = 1
 
+for row in range(h):
+    for col in range(w):
+        print(arr[row][col], end=" ")
+    print()
 
+# w,h,b =map(int,input().split()) #def
 
+# n = int(input())  #개수를 입력받아 n에 정수로 저장
+# d = [[0 for col in range(19)] for row in range(19)]
+#
+#
 # for i in range(n):
-
-
-
-for i in range(19):
-  for j in range(19):
-    print(d[i][j],end=" ")
-  print()
-
-
+#   x,y = map(int,input().split())
+#   d[int(x-1)][int(y-1)]=1
+#
+#
+#
+# # for i in range(n):
+#
+#
+#
+# for i in range(19):
+#   for j in range(19):
+#     print(d[i][j],end=" ")
+#   print()
+#
 
 
 #
@@ -40,6 +57,18 @@ for i in range(19):
 #
 #
 #
+## d = [list(map(int, input().split())) for _ in range(19)]
+# n = int(input())
 #
-
-
+# for _ in range(n):
+#     x, y = map(int,input().split())
+#     for j in range(19):
+#         if d[j][int(y-1)] == 0:
+#             d[j][int(y-1)] = 1
+#         else:
+#             d[j][int(y-1)] = 0
+#
+#         if d[int(x-1)][j] == 0:
+#             d[int(x-1)][j] = 1
+#         else:
+#             d[int(x-1)][j] = 0
