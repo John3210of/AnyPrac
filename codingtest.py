@@ -1,3 +1,7 @@
+
+
+
+
 h, w = map(int, input().split())
 n = int(input())
 arr = [[0 for col in range(w)] for row in range(h)]
