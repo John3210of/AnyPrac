@@ -31,5 +31,22 @@ if __name__ == "__main__":  #void main() 과 같은 기능
 
     #split : str>list로 전환
 
-
     #파이선에서 배열(정적) >> 리스트(동적)으로 만들어 진다. 따라서 배열 size가 변할 수 있다.
+
+
+    #220105 수업 추가
+
+    #정적인 text를 저장하고 싶을때 > string pool 에 저장. 일부요소만 수정하고 싶다면 문제가 생길 수 있다.
+    #java의 경우 string buffer로 방지할 수 있다. ?) hello > Hello > hello 로 가면 어떻게 되는지??
+    #Deque 는 양방향으로 들어갈수있다. double-ended queue
+
+    #list vs array
+
+    # memory
+    # 동적할당 malloc,new(c,java) list(python) >> 사실 동적할당은 정적할당 doubling 한것이다.
+    # 정적할당 = 배열의 size가 정해진경우 ex) int arr[5]=[1,2,3,4,5] >> 배열의 이름에는 0번 index의 주소가 들어가 있다.
+    # 지역,매개변수
+
+    #브르투 포스 (완전탐색)
+
+

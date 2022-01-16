@@ -2,16 +2,14 @@
 
 # 조건1) 딕셔너리형태로 출력
 from collections import Counter
-
 # def groupAnagrams(list_word):
 #
 #     # 조건2) index의 문자열 count 하여 원소의 갯수체크
 #     # 같다면 같은 딕셔너리로 들어가기 > 비효율적이다.
 #     # 리스트 index 정렬하여 각 index가 같은지 비교하기.
+
 #     # https://mong9data.tistory.com/33 sort sorted 차이점
-#
 #     new_lst = sorted(list_word)
-#
 #     print(new_lst)
 import collections
 
