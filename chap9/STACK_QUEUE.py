@@ -4,8 +4,7 @@
 # LIFO = STACK // FIFO = QUEUE
 # 먼저 먹은 접시가 가장 아래에 있는 개념 = STACK
 # 줄을 서는 개념 = QUEUE // DEQUE를 사용하여 QUEUE의 속도를 빠르게 하여 사용 한다.
-from chap9.structures import Node,Stack
-
+from chap9.structures import Node, Stack, Queue
 
 def test_node():
     assert Node(1, None).item == 1  # assert = 주장한다// node(myval,nextadd)
@@ -29,6 +28,25 @@ def test_stack():  # stack은 3가지 기능이 요구된다.
     assert stack.pop() is None
     assert stack.isempty()
 
+def test_queue():  # stack은 3가지 기능이 요구된다.
+
+    queue = Queue()  # push,pop,is_empty
+
+    queue.push(1)
+    queue.push(2)
+    queue.push(3)
+    queue.push(4)
+    queue.push(5)
+
+    assert queue.pop() == 1
+    assert queue.pop() == 2
+    assert queue.pop() == 3
+    assert queue.pop() == 4
+    assert queue.pop() == 5
+    assert queue.pop() is None
+    assert queue.isempty()
+
 
 test_node()
 test_stack()
+test_queue()
