@@ -26,7 +26,3 @@ for i in range(n):
 
 choice = small_num.index(max(small_num))  # >> small인 값중에 가장 큰값을 구하고 그 index 넘버를 구하기
 print(choice,'행을 고른다. output= ',max(small_num)) #>># 조건3) 뽑고자 하는 행에서 가장 작은 숫자 뽑기
-
-
-
-
