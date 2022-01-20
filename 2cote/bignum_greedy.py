@@ -6,7 +6,8 @@ list1 = list(input('index 입력 (%d)개 : ' % n).split())
 list1.sort()
 print(list1)
 
-list1_int = list(map(int, list1))
+list1_int = list(map(int, list1))    #list의 형변환
+print(list1_int)
 
 temp = 0
 cnt = 0

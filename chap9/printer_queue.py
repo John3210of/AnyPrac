@@ -14,39 +14,42 @@
 # 각 테스트 케이스에 대해 문서가 몇 번째로 인쇄되는지 출력한다.
 # a=int(input('테스트 횟수: '))
 # print('횟수: ',a)
+
+# https://www.acmicpc.net/problem/1966
+
 for i in range(1):
     n, m = map(int, input('문서의개수, 인쇄순서가 궁금한 문서: ').split())
     print('문서 갯수,순서가 궁금한 문서(0~ m-1): ', n, m)
 
-    imptc = list(input('중요도: ').split())
+    imptc = list(map(int, (input('중요도: ').split())))
     print('중요도 리스트: ', imptc)
-
-    # int 형 list로 형변환
-
-    imptc_int = list(map(int, imptc))
-    print('ww', imptc_int)
 
     cnt = 1
     temp = []
 
-    while cnt < 4:
-        # list내의 가장 큰 값을 찾아냄.
-        largest = imptc_int[0]
-        for j in range(len(imptc_int)):
-            if imptc_int[j] > largest:
-                largest = imptc_int[j]
-                del_len = j
-            else:
-                del_len = 0
-        # index(0)이 가장 크지 않을경우 기존 list에서 제거하고
-        # 제거한 부분을 다시 tail에 붙여줌
-        if del_len != 0:
-            temp.extend(imptc_int[0:del_len])
-            del imptc_int[0:del_len]
-            imptc_int.extend(temp)
-        print('큰수가 가장 먼저 와있니?', imptc_int)
+    # list내의 가장 큰 값을 찾아냄.
+    largest = imptc[0]
+    for j in range(len(imptc)):
+        print('인덱스 value: ', imptc[j])
+        print('임시 largest: ', largest)
+        if imptc[j] > largest:
+            largest = imptc[j]
+            del_len = j
+        else:
+            del_len = 0
+        print('loop j번', j)
+    print('지워야할 길이: ', del_len)
+    print('index_largest: ', largest)
 
-        print_order = []
-        print_order.append(imptc_int.pop(0))
-        print(print_order)
-        cnt += 1
+    # index(0)이 가장 크지 않을경우 기존 list에서 제거하고
+    # 제거한 부분을 다시 tail에 붙여줌
+    if del_len != 0:
+        temp.extend(imptc[0:del_len])
+        del imptc[0:del_len]
+        imptc.extend(temp)
+    print('큰수가 가장 먼저??', imptc)
+
+    print_order = []
+    print_order.append(imptc.pop(0))
+    print(print_order)
+    cnt += 1
