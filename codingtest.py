@@ -1,3 +1,21 @@
+#######################################
+# 실행시간 체크 모듈
+import math
+import time
+
+start = time.time()
+math.factorial(100000)
+end = time.time()
+print(f"{end - start:.5f} sec")
+#######################################
+
+
+
+
+
+
+
+
 str = input()
 
                         #왜 palins 와 palins2를 나누어서 진행했는지 설명해주시면 좋을것 같습니다.
