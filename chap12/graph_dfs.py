@@ -31,9 +31,9 @@
 # 해야할 것.
 # 해보니까 ~~더라.
 # ~~만큼의 시간이 걸리더라.
+
 import math
 import time
-
 
 def island_dfs_stack(grid):
     dx = [0, 0, 1, -1]
