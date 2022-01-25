@@ -1,6 +1,11 @@
 # # 음료수 얼려먹기
 # # 상하좌우끼리 붙어있는 경우 연결되어 cnt++
-iced = [[0, 0, 1, 1, 0],
+
+# 조건1) 음료수를 얼릴수 있는 노드 전부 cnt++
+
+# 조건2) 얼릴수 있는곳과 인접한 노드 전부 얼릴수 없도록 만들기
+
+iced = [[0, 1, 0, 1, 0],
         [0, 1, 1, 0, 1],
         [1, 0, 1, 0, 1],
         [0, 1, 0, 1, 0]]
@@ -17,9 +22,11 @@ def icecream(iced):
     cnt = 0
 
     def dfs(row, col):
-        if iced[row][col]:
+
+        if iced[row][col] == 1:
             return
         iced[row][col] = 1
+
         for i in range(4):  # 상하좌우 가야됨
             nr = row + dr[i]
             nc = col + dc[i]
@@ -38,6 +45,7 @@ def icecream(iced):
 
 
 icecream(iced)
+
 
 #
 #     ##여기까지가 안보고 친거###########
@@ -60,9 +68,7 @@ icecream(iced)
 #         iced[row][col] = 1
 #
 #         for i in range(4):  # 상하좌우 가야됨
-#             nr = row + dr[i]
-#             nc = col + dc[i]
-#             dfs(nr, nc)
+#             dfs(row + dr[i], col + dc[i])
 #         return
 #
 #     for row in range(len(iced)):  # node 갯수 세는법
