@@ -10,3 +10,35 @@
 # 따라서 N+1=2^(h+1)
 # => log2(N+1)=h+1
 # => h = log2(N+1)-1
+
+from collections import deque
+
+class TreeNode:
+
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def make_lst_by_bst(root, limit):
+    if not root:
+        return []
+
+    lst = []
+    q = deque([root])
+    print('makelist+limit_before q: ', limit)
+
+    while q:
+        print('lst: ', lst)
+        if len(lst) > limit:
+            break
+        print('q: ',q)
+        node = q.popleft()
+        if node:
+            lst.append(node.val)
+            q.append(node.left)
+            q.append(node.right)
+        else:
+            lst.append(None)
+
+    return lst
