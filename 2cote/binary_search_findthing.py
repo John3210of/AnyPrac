@@ -20,7 +20,7 @@ class treenode:
 #                     7
 #                 2         8
 #             3  null     9   null
-
+#         null  null  NULL NULL
 
 # 트리만들어
 def maketree(lst):
@@ -71,3 +71,52 @@ find = [5, 7, 9]
 thing.sort()
 
 search(thing, find)
+
+###############################################
+# class treenode:
+#
+#     def __init__(self, val, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+#
+#
+# def maketree(lst):
+#     if not lst:
+#         return None
+#
+#     mid = len(lst) // 2
+#
+#     node = treenode(lst[mid])
+#     node.left = maketree(lst[:mid])
+#     node.right = maketree(lst[mid + 1:])
+#
+#     return node
+#
+#
+# def search(thing, find):
+#     result = ['no'] * len(find)
+#     root = maketree(thing)
+#
+#     def dfs(find, root):
+#         if not root:
+#             return
+#         for i in range(len(find)):
+#             if find[i] == root.val:
+#                 print('find[i]: ', i, find[i])
+#                 result[i] = 'yes'
+#             elif find[i] < root.val:
+#                 dfs(find, root.left)
+#             elif find[i] > root.val:
+#                 dfs(find, root.right)
+#
+#     dfs(find, root)
+#     print(result)
+#     return result
+#
+#
+# thing = [8, 3, 7, 9, 2]
+# find = [5, 7, 9]
+# thing.sort()
+#
+# search(thing, find)

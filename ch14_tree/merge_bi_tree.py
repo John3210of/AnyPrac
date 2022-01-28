@@ -11,7 +11,6 @@
 #       왼쪽으로 가면서 재귀함수, 오른쪽으로 가면서 재귀함수
 # 로직2) if node.val==0 이라면 ?
 
-
 from collections import deque
 
 
