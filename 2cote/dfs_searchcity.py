@@ -1,41 +1,46 @@
-from collections import deque
 import sys
+from collections import deque
 
 input = sys.stdin.readline
-INF = int(1e9)  # 도시 개수, 도로 개수, 최단 거리, 출발 도시
-n, m, k, x = map(int, input().split())  # 각 도시에 연결된 도로 정보를 담는 리스트
-graph = [[] for i in range(n + 1)]  # 최단 거리 테이블
-distance = [INF] * (n + 1)  # 모든 도로 정보 입력 받기
-for _ in range(m):
-    i, j = map(int, input().split())
-    graph[i].append(j)  # 도시 i에서 도시 j까지 도로가 존재
+N, M, K, X = map(int, input().split())  # 도시개수,도로개수,최단거리,출발도시의번호
+graph = [[] for _ in range(1 + N)]
 
+for i in range(M):  # 도로정보입력받기
+    a, b = map(int, input().split())
+    graph[a].append(b)  # 1 2 / 1 3 / 2 3 / 2 4  딕셔너리로 하려고 했지만 이방법이 더 쉬운듯.
+print(graph)
 
-def solution(start):
-    answer = []
-    queue = deque([start])
-    distance[start] = 0  # bfs 방식으로 인접 도시들 방문
-    while queue:
-        v = queue.popleft()
-        if distance[v] == k:
-            answer.append(v)
-        if distance[v] > k:  # 나머지 도시들은 최단 거리가 k 이상
-            return answer
-        for x in graph[v]:  # 현재 도시 v를 거쳐서 도시 x까지 가는게 더 짧은 경우
-            if distance[v] + 1 < distance[x]:
-                distance[x] = distance[v] + 1
-                queue.append(x)
+distance = [-1] * (N + 1)  # 최단거리가 k인 도시가 존재하지 않을경우 -1을 return하므로..
+                           # N+1을 하는이유는 idx_num과 도시num 맞추려고
+distance[X] = 0
 
-    return answer
+print('distance: ', distance)
 
+q = deque([X])
 
-answer = solution(x)
-if answer:
-    answer.sort()
-    for x in answer:
-        print(x)
-else:
+while q:
+    now = q.popleft()
+    for next in graph[now]:
+        if distance[next] == -1:  # 아직 가지 않았다면
+            distance[next] = distance[now] + 1
+            q.append(next)  # bfs
+
+flag = 1
+for i in range(1, N + 1):
+    if distance[i] == K:  # 최단거리가 k인 도시의 번호 출력
+        print(i)
+        flag = 0
+
+if flag == 1:  # 최단거리가 k가 없다면 print(-1)
     print(-1)
+
+
+
+
+
+
+
+
 
 # # 도시의 갯수 N, 도로의 갯수 M,
 # # 거리정보 K, 출발 도시의 번호 X
@@ -51,7 +56,7 @@ else:
 # val = [[1, 2], [1, 3], [2, 3], [2, 4]]
 # # val = []
 # # for i in range(M):
-# #     val.append((list(map(int, input().split()))))  ## m회 입력. 띄어쓰기로 나누어서 list에 append
+# #       ## m회 입력. 띄어쓰기로 나누어서 list에 append
 #
 # # 첫번째 index 가 있는 리스트에 두번째 index가 있다면 n to m = 1
 #

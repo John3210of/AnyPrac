@@ -67,9 +67,10 @@ class L_List:
         if not self.isempty():
             node = self.head
             while node:
-                print(node.val, end=' ')
+                # print(node.val, end=' ')
+                print(int(node.val))
                 node = node.next
-            print()
+            # print()
         else:
             print('list is empty')
 
@@ -103,11 +104,15 @@ if __name__ == '__main__':
     list.add_front(1)
     list.add_end(2)
     list.add_end(4)
+    list.insert(1,5)
     list.printnode()
 
-    list2.add_front(1)
-    list2.add_end(3)
-    list2.add_end(4)
-    list2.printnode()
+
+    #
+    #
+    # list2.add_front(1)
+    # list2.add_end(3)
+    # list2.add_end(4)
+    # list2.printnode()
 
 
