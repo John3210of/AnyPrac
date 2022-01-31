@@ -22,7 +22,6 @@ def quicksort(lst, start, end):
     quicksort(lst, p + 1, end)
 
     print(lst)
-    print('asdf')
     return lst
 
 
