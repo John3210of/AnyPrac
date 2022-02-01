@@ -16,13 +16,6 @@ def bubble(lst):
 
     print(lst)
 
-
-print()
-print()
-print()
-print()
-print()
-print()
 bubble(lst)
 
 

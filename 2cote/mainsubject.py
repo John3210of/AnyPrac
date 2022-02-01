@@ -1,5 +1,6 @@
 import sys
-input=sys.stdin.readline
+
+input = sys.stdin.readline
 
 n = int(input())
 lst = []
@@ -11,7 +12,7 @@ for i in range(n):
     Su = int(su)
     lst.append([name, Guk, Yo, Su])
 
-lst.sort(key=lambda x: (-x[1], x[2], -x[3], x[0])) # 무친 덱압축 -x[1] 이거 str 에러 때문에 구글링 하다가 찾음
+lst.sort(key=lambda x: (-x[1], x[2], -x[3], x[0]))  # 무친 덱압축 -x[1] 이거 str 에러 때문에 구글링 하다가 찾음
 
 for i in range(len(lst)):
     print(lst[i][0])
