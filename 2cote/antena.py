@@ -31,9 +31,12 @@ home.sort()
 res=(len(home)-1)//2
 print(home[res])
 
-# ## 논리
+# #
+# # 논리
 # # home의 i번째 인덱스를 기준으로 삼고, 그때 각 거리를 비교하여 더한다.
 # # 거리를 비교하여 가장 작은 값일때의 i번째 인덱스를 출력한다.
+# #
+
 # for i in home:
 #     temp=0
 #     for j in home:
@@ -41,10 +44,10 @@ print(home[res])
 #     lst.append([temp,i])
 #
 # print(min(lst)[1])
-# # lst.sort()
-# # print(lst[0][1])
-#
+# lst.sort()
+# print(lst[0][1])
+
 # # [5,1,7,9]
-#
+
 
 

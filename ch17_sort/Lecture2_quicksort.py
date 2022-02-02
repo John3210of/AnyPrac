@@ -2,7 +2,7 @@
 # 최악일때 n^2이 되므로 n log n 을 보장하는 merge,heap sort를 쓴다.
 # 분할정복을 통해 주어진 배열을 정렬하는 알고리즘.
 # divide and conquer
-lst = [1, 2, 3, 4, 5, 6, 7, 8]
+lst = [1, 2, 3, 4, 7, 6, 5, 8]
 
 
 def qsort(lst):  # 피벗을 기준으로 왼편, 오른편을 각각 다시 분할화 해야함.
@@ -11,6 +11,7 @@ def qsort(lst):  # 피벗을 기준으로 왼편, 오른편을 각각 다시 분
             return
         pivot = lst[right]  # 현재 리스트의 가장 오른편 요소를 pivot으로 한다.
         cursor = left - 1  # 현재 커서의 위치
+
         for i in range(left, right):  # 현재 리스트를 돌면서 비교한다.
             if pivot < lst[i]:  # lst값이 더 클경우는 상관없음
                 print('pass', lst)
