@@ -48,27 +48,6 @@ class L_List:
             self.head = Node(val)
         self.length += 1
 
-    # # 노드 원하는 위치로 삽입해주기
-    # 불가능해
-    # def insert(self, pos, val):
-    #     if not self.isempty():
-    #         if pos == 0:
-    #             self.add_front(val)
-    #
-    #         elif pos == self.length:
-    #             self.add_end(val)
-    #
-    #         else:
-    #             node = self.head
-    #             cnt = 0
-    #             while pos > 0 and pos < self.length:
-    #                 if cnt == pos - 1:
-    #                     new_node = Node(val, node.next)
-    #                     node.next = new_node
-    #                     break
-    #                 node = node.next
-    #                 cnt += 1
-    #             self.length += 1
 
     def deserial_linkedlist(self):  # 링크드리스트 역직렬화
         lst = []

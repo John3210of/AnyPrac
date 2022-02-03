@@ -13,8 +13,10 @@ class MaxHeap:  # class 부르기
 
         # 스왑하며 올라가는 로직
         while parent > 0:  # leaf부터 root까지 올라간다. level n >> n-1 >>... >> 0
-            if self.val[cursor] > self.val[parent]:  # 만약 현재 커서(자식노드)가 가르키는 값이 부모보다 크다면
-                self.val[cursor], self.val[parent] = self.val[parent], self.val[cursor]  # 스왑이 일어난다.
+            if self.val[cursor] < self.val[parent]:
+                break
+                # 만약 현재 커서(자식노드)가 가르키는 값이 부모보다 크다면
+            self.val[cursor], self.val[parent] = self.val[parent], self.val[cursor]  # 스왑이 일어난다.
             cursor = parent  # level up
             parent = cursor // 2
         return self.val
@@ -24,26 +26,42 @@ class MaxHeap:  # class 부르기
             return None
         self.val[1], self.val[-1] = self.val[-1], self.val[1]  # root와 leaf를 교체하여 pop하기
         pop_val = self.val.pop()  # 결과적으로 target이었던 root값이 pop됨
+
         # 다시 힙으로 만드는 과정
         root = 1  # 스왑된 값이 현재는 루트에 있음.
         cursor = root  # 커서를 루트에 놓음.
 
-        while True:  # 스왑하며 내려가는 로직
-            left = 2 * cursor  # 좌,우를 비교해서 들어갈 예정
-            right = 2 * cursor + 1
-            if right > len(self):  # 자식이 없거나 left에서 끝날경우 예외처리
-                if left == len(self):
-                    if self.val[cursor] <= self.val[left]:
-                        self.val[cursor], self.val[left] = self.val[left], self.val[cursor]
-                break
-            if (self.val[cursor] < self.val[left]) and (self.val[cursor] >= self.val[right]):  # 좌로 내려갈래
-                self.val[cursor], self.val[left] = self.val[left], self.val[cursor]
-                cursor = left
-            elif (self.val[cursor] >= self.val[left]) and (self.val[cursor] < self.val[right]):  # 우로 내려갈래
-                self.val[cursor], self.val[right] = self.val[right], self.val[cursor]
-                cursor = right
+        while True:
+            left, right = 2 * cursor, 2 * cursor + 1
+            n_cursor = cursor
+
+            if left <= len(self) and self.val[left] > self.val[n_cursor]:
+                n_cursor = left
+            if right <= len(self) and self.val[right] > self.val[n_cursor]:
+                n_cursor = right
+
+            if n_cursor != cursor:
+                self.val[n_cursor], self.val[cursor] = self.val[cursor], self.val[n_cursor]
             else:
                 break
+
+        # while True:  # 스왑하며 내려가는 로직
+        #     left, right = 2 * cursor, 2 * cursor + 1  # 좌,우를 비교해서 들어갈 예정
+        #
+        #     if right > len(self):  # out of index 일경우 예외처리
+        #         if left == len(self):
+        #             if self.val[cursor] <= self.val[left]:
+        #                 self.val[cursor], self.val[left] = self.val[left], self.val[cursor]
+        #         break
+        #     if (self.val[cursor] < self.val[left]) and (self.val[cursor] >= self.val[right]):  # 좌로 내려갈래
+        #         self.val[cursor], self.val[left] = self.val[left], self.val[cursor]
+        #         cursor = left
+        #     elif (self.val[cursor] >= self.val[left]) and (self.val[cursor] < self.val[right]):  # 우로 내려갈래
+        #         self.val[cursor], self.val[right] = self.val[right], self.val[cursor]
+        #         cursor = right
+        #
+        #     else:
+        #         break
 
         return pop_val
 
@@ -59,5 +77,5 @@ def Maxheapsort(lst):
     return res
 
 
-lst = [3, 4, 1, 5, 5, 7,21,543,1212,2,3,55,100]
+lst = [3, 4, 1, 5, 5, 7, 21, 543, 1212, 2, 3, 55, 100, 22222, 0, 123, -3]
 print(Maxheapsort(lst))
