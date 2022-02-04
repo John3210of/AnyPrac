@@ -9,25 +9,23 @@ sys.setrecursionlimit(100000)
 # 리스트 원소끼리 비교해서 같다면 다음것까지 비교하면서 cnt++해준다.
 # 만약 다를경우 cnt+문자열을 pop하고 temp에 넣는다. 다시 반복하다가 끝까지 확인하고, join하여
 # answer list에 append시키고, 상황을 n//2개씩까지 간후에, 가장짧은 길이의 리스트 원소를 출력해준다.
+# abcdddd>a,b,c,d,d,d,d > abc4d
+# ab, cd, dd, dd, d > abcd2ddd
 
 
 def solution(s):
-    if len(s) == 0:
-        return 0
     if len(s) == 1:
         return 1
-
     def slicing(q, cnt, temp):
-
-        if len(q) <= 1:
-            if cnt > 1:
+        if len(q) <= 1:  # 종료조건
+            if cnt > 1:  # 마지막에 연속된 문자가 있을경우 예외처리
                 head = str(cnt)
                 temp += head + q[0]
             else:
                 temp += q[0]
-
             print(temp)
             return len(temp)
+        # [sss] ,cnt=2  > 3s > s
         if q[0] == q[1]:  # 처음원소와 다음원소가 같다면.
             cnt += 1
         else:
@@ -37,21 +35,18 @@ def solution(s):
                 cnt = 1  # 빼줄때 초기화시킨다.
             else:
                 temp += q[0]
-
         q.popleft()
-
-        # print('q: ',q)
         return slicing(q, cnt, temp)
 
     # 리스트 쪼개기
     def uniting(s):
-        temp = list(s)
+        temp = list(s) #asdf > a,s,d,f
         answer = []
         result = []
         for unit in range(1, len(s) // 2 + 1):  # 몇개씩 나눌건지 => 최대 len//2 개씩 나눌수있다.
-            # print('문자열길이', len(s))
-            # print('unit', unit)
-            # print('횟수', math.ceil(len(s) / unit))
+            print('문자열길이', len(s))
+            print('unit', unit)
+            print('횟수', math.ceil(len(s) / unit))
             temp2 = []
             for i in range(math.ceil(len(s) / unit)):  # 몇번 넣을건지
                 start = unit * i
@@ -61,12 +56,11 @@ def solution(s):
                 else:
                     val = ''.join(temp[start:end])
                 temp2.append(val)
-                # print('temp2', temp2)
-                # print("*" * 25)
-
+                print('temp2', temp2)
+                print("*" * 25)
             answer.append(temp2)
-            # print("*" * 25)
-            # print('answer', answer)
+            print("*" * 25)
+            print('answer', answer)
         for i in answer:
             q = deque(i)
             x = slicing(q, 1, '')
@@ -78,7 +72,6 @@ def solution(s):
             answer = min(result)
         print(answer)
         return answer
-
     return uniting(s)
 
 
@@ -87,5 +80,5 @@ def solution(s):
 # 리스트를 어떻게 쪼갤까..
 
 
-s = 'aaaaaaaaaabb'
-solution(s)
+s = 'aabbsdsasd'
+print(solution(s))
