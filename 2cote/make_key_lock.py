@@ -53,43 +53,43 @@ def solution(key, lock):
 # 4.  패턴이 존재한다면 두 이차원 배열끼리 포개서 합쳐.
 #      만약 포개서 합칠때 2가 있다면 다시 회전해서 패턴을보고, 끝까지 없다면 다시 false를 리턴해.
 #
-
-def solution(key, lock):
-    def rotated(key):  # 90도 회전하기
-        row = len(key)  # row
-        col = len(key[0])  # col
-
-        result = [[0] * row for _ in range(col)]
-
-        for i in range(row):
-            for j in range(col):
-                result[j][row - i - 1] = key[i][j]
-
-        return result
-
-    def find_pattern(key, lock, cnt):
-
-        getpattern
-        by
-        lines
-
-        if cnt > 3:
-            return False
-
-        if key_pattern == lock_pattern:
-            sum_cover(key, lock)
-        else:
-            cnt += 1
-            find_pattern(rotated(key), lock)
-
-    def sum_cover(key, lock):
-        if is_two_exist:
-            return False
-        else:
-            return True
-
-    cnt = 0
-    return find_pattern(key, lock, cnt)
+# 
+# def solution(key, lock):
+#     def rotated(key):  # 90도 회전하기
+#         row = len(key)  # row
+#         col = len(key[0])  # col
+#
+#         result = [[0] * row for _ in range(col)]
+#
+#         for i in range(row):
+#             for j in range(col):
+#                 result[j][row - i - 1] = key[i][j]
+#
+#         return result
+#
+#     def find_pattern(key, lock, cnt):
+#
+#         getpattern
+#         by
+#         lines
+#
+#         if cnt > 3:
+#             return False
+#
+#         if key_pattern == lock_pattern:
+#             sum_cover(key, lock)
+#         else:
+#             cnt += 1
+#             find_pattern(rotated(key), lock)
+#
+#     def sum_cover(key, lock):
+#         if is_two_exist:
+#             return False
+#         else:
+#             return True
+#
+#     cnt = 0
+#     return find_pattern(key, lock, cnt)
 #
 #
 #
