@@ -8,18 +8,14 @@ lst = [0] * m
 result = 0
 for i in weights:
     lst[i - 1] += 1
-print(lst)
 for i in range(m):
-    print('lst[i]: ',lst[i])
     n -= lst[i]  # a를 고르고
-    print('n: ', n)
     result += lst[i] * n  # b를 골라
-    print('after: ',result)
 
 print(result)
 
 #
-# # sol1) n^2
+# # sol) n^2
 # lst = []
 #
 # cnt = 0

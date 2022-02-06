@@ -140,3 +140,9 @@ def rotated(a):
       result[j][n-i-1] = a[i][j]
   return result
 
+#######################[Python] 두 리스트(배열) 각 요소들의 값 더하기
+#
+# 1. list comprehension 을 사용하기
+[list1[i] + list2[i] for i in range(len(list1))]
+# 2. zip 함수를 사용하기
+[x+y for x,y in zip(list1, list2)]
