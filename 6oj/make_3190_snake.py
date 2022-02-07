@@ -5,6 +5,7 @@ k = int(input())
 apple = []
 for i in range(k):
     apple.append(list(map(int, input().split())))
+
 move_switch = []
 l = int(input())
 for i in range(l):
@@ -35,19 +36,22 @@ d_col = [1, 0, -1, 0]
 direction = 0
 cnt = 0
 
+
 while True:
     next_point = [snake[-1][0] + d_row[direction], snake[-1][1] + d_col[direction]]
 
-    if next_point in snake or next_point[0] >= n or next_point[1] >= n or next_point[0] < 0 or next_point[1] < 0:  # gameover 조건
+    if next_point in snake or next_point[0] >= n \
+            or next_point[1] >= n or next_point[0] < 0 or next_point[
+        1] < 0:  # gameover 조건
         cnt += 1  # 이동을 한 시점에서 죽는거니깐.
         print(cnt)
         break
     snake.append(next_point)
     cnt += 1  # 이동후 시간증가
-    if [next_point[0] + 1, next_point[1] + 1] not in apple:  # 리스트의 좌표+1 해야 입력해준 실제좌표
-        snake.popleft()
-    # 사과를 먹었으면 지워야지 병신아
     temp = [next_point[0] + 1, next_point[1] + 1]
+    if temp not in apple:  # 리스트의 좌표+1 해야 입력해준 실제좌표
+        snake.popleft()
+    # 사과를 먹었으면 지워야지
     if temp in apple:
         apple.remove(temp)
 
@@ -63,3 +67,52 @@ while True:
                 if direction < -4:
                     direction = 3
             move_switch.popleft()
+
+
+## 제출용
+# from collections import deque
+# n = int(input())
+# k = int(input())
+# apple = []
+# for i in range(k):
+#     apple.append(list(map(int, input().split())))
+# move_switch = []
+# l = int(input())
+# for i in range(l):
+#     move_switch.append(list(input().split()))
+# for i in range(len(move_switch)):
+#     int(move_switch[i][0])
+# move_switch = deque(move_switch)
+# graph = [[0] * n for _ in range(n)]
+# snake = [[0, 0]]
+# snake = deque(snake)
+# d_row = [0, 1, 0, -1]
+# d_col = [1, 0, -1, 0]
+# direction = 0
+# cnt = 0
+# while True:
+#     next_point = [snake[-1][0] + d_row[direction], snake[-1][1] + d_col[direction]]
+#     if next_point in snake or next_point[0] >= n \
+#             or next_point[1] >= n or next_point[0] < 0 or next_point[
+#         1] < 0:
+#         cnt += 1
+#         print(cnt)
+#         break
+#     snake.append(next_point)
+#     cnt += 1
+#     temp = [next_point[0] + 1, next_point[1] + 1]
+#     if temp not in apple:
+#         snake.popleft()
+#     if temp in apple:
+#         apple.remove(temp)
+#     if len(move_switch) > 0:
+#         if cnt == int(move_switch[0][0]):
+#             if move_switch[0][1] == 'D':
+#                 direction += 1
+#                 if direction > 3:
+#                     direction = 0
+#             elif move_switch[0][1] == 'L':
+#                 direction -= 1
+#                 if direction < -4:
+#                     direction = 3
+#             move_switch.popleft()
