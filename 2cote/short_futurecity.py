@@ -20,10 +20,8 @@ def dijk(graph, start, end):
     q = []
     heapq.heappush(q, (0, start))  # 넣을 위치,( 누적비용 , 시작위치) 팝할때 맨 좌측기준으로 팝된다. 누적비용
     dist[start] = 0
-    print('dist start!: ', dist)
     while q:
         acc, pointer = heapq.heappop(q)  # 누적값, 현재노드 위치
-        print('우선순위 큐 상태 : ', q)
         if dist[pointer] < acc:  # 나의 노드를 기준으로 최솟값이 갱신이 이미 되었다고 볼 수 있다.
             continue
         for adj, temp in graph[pointer]:  # adj = 인접노드, temp=현재 위치까지의 비용
@@ -31,8 +29,6 @@ def dijk(graph, start, end):
             if cost < dist[adj]:  # cost가 시작점 기준 인접노드의 거리보다 더 작은경우
                 dist[adj] = cost
                 heapq.heappush(q, (cost, adj))
-                print('push후 우선순위 큐: ', q)
-                print('dist 갱신 후: ', dist)
 
     return dist[end]
 
