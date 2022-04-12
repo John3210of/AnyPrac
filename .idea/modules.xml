@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/anyprac.iml" filepath="$PROJECT_DIR$/.idea/anyprac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../apache-jmeter-5.4.3/apache-jmeter-5.4.3.iml" filepath="$PROJECT_DIR$/../apache-jmeter-5.4.3/apache-jmeter-5.4.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaprac/javaprac.iml" filepath="$PROJECT_DIR$/../javaprac/javaprac.iml" />
     </modules>
   </component>
 </project>
