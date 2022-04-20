@@ -221,3 +221,9 @@ while True:
     if n == 0:
         break
     print(sum(prime[n + 1:2 * n + 1]))
+
+#부분집합 구하기
+    for i in lst:   #res=[[]]
+        size = len(res)
+        for j in range(size):
+            res.append(res[j] + [i])

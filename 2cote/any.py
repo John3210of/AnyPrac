@@ -21,9 +21,8 @@ def slicing(q, cnt, temp):  # cnt 는 zip count이면서 cursor 역할까지.
     return slicing(q, cnt, temp)
 
 
-
 s = 'aaaacbbd'
-a=list(s)
-q=deque(a)
+a = list(s)
+q = deque(a)
 
 print(slicing(q, 1, 'test: '))
