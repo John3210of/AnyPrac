@@ -82,3 +82,54 @@ def solution(s):
 
 s = 'aabbsdsasd'
 print(solution(s))
+
+
+# from collections import deque
+# import math
+# import sys
+# sys.setrecursionlimit(100000)
+# def solution(s):
+#     def slicing(q, cnt, temp):
+#         if len(q) <= 1:
+#             if cnt>1:
+#                 head = str(cnt)
+#                 temp += head + q[0]
+#             else:
+#                 temp += q[0]
+#             return len(temp)
+#         if q[0] == q[1]:  # 처음원소와 다음원소가 같다면.
+#             cnt += 1
+#         else:
+#             if cnt > 1:
+#                 head = str(cnt)
+#                 temp += head + q[0]
+#                 cnt = 1  # 빼줄때 초기화시킨다.
+#             else:
+#                 temp += q[0]
+#         q.popleft()
+#         return slicing(q, cnt, temp)
+#     def uniting(s):
+#         temp = list(s)
+#         answer = []
+#         result = []
+#         for unit in range(1, len(s) // 2 + 1):  # 몇개씩 나눌건지 => 최대 len//2 개씩 나눌수있다.
+#             temp2 = []
+#             for i in range(math.ceil(len(s) / unit)):  # 몇번 넣을건지
+#                 start = unit * i
+#                 end = start + unit
+#                 if end > len(s):
+#                     val = ''.join(temp[start:len(s)])
+#                 else:
+#                     val = ''.join(temp[start:end])
+#                 temp2.append(val)
+#             answer.append(temp2)
+#         for i in answer:
+#             q = deque(i)
+#             x = slicing(q,1,'')
+#             result.append(x)
+#         if not result:
+#             return 1
+#         else:
+#             answer = min(result)
+#         return answer
+#     return uniting(s)

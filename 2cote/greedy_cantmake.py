@@ -7,7 +7,6 @@ if min(lst) != 1:
     print(min(lst) - 1)
 else:
     for i in lst:  # res=[[]]
-        print("************")
         size = len(res)
         for j in range(size):
             res.append(res[j] + [i])

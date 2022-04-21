@@ -227,3 +227,20 @@ while True:
         size = len(res)
         for j in range(size):
             res.append(res[j] + [i])
+
+
+# 문자열 n개씩 잘라서 list화 하기기
+
+seq='12312312312312'
+length=3
+[seq[i:i+length] for i in range(0, len(seq), length)]
+
+# result
+['123', '123', '123', '123', '12'] ##전부다 필요
+#############
+seq='12312312312312'
+length=3
+[''.join(x) for x in zip(*[list(seq[z::length]) for z in range(length)])]
+
+# result
+['123', '123', '123', '123']    # 잘린 애만 필요
