@@ -222,25 +222,34 @@ while True:
         break
     print(sum(prime[n + 1:2 * n + 1]))
 
-#부분집합 구하기
-    for i in lst:   #res=[[]]
+    # 부분집합 구하기
+    for i in lst:  # res=[[]]
         size = len(res)
         for j in range(size):
             res.append(res[j] + [i])
 
-
 # 문자열 n개씩 잘라서 list화 하기기
 
-seq='12312312312312'
-length=3
-[seq[i:i+length] for i in range(0, len(seq), length)]
+seq = '12312312312312'
+length = 3
+[seq[i:i + length] for i in range(0, len(seq), length)]
 
 # result
-['123', '123', '123', '123', '12'] ##전부다 필요
+['123', '123', '123', '123', '12']  ##전부다 필요
 #############
-seq='12312312312312'
-length=3
+seq = '12312312312312'
+length = 3
 [''.join(x) for x in zip(*[list(seq[z::length]) for z in range(length)])]
 
 # result
-['123', '123', '123', '123']    # 잘린 애만 필요
+['123', '123', '123', '123']  # 잘린 애만 필요
+
+# 딕셔너리
+d.get(x,0) > x가 없으면 0으로 추가
+for key,val in d.items() > 딕셔너리 key,val값 볼 수 있음
+#set은 hashtable로 이루어져 있다.
+s=set(lost) & set(reserve) #교집합을 의미
+
+#형태 변환 str > int map list
+numbers2=list((map(str,numbers)))
+

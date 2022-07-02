@@ -18,7 +18,7 @@ def solution(tickets):
     for a,b in tickets:
         graph[a].append(b)
         print('graph for first : ',graph)
-    for a, b in graph.items():  #딕셔너리를 튜플형태로
+    for a, b in graph.items():  #딕셔너리를 튜플형태
         graph[a].sort()
         print('graph: for items ',graph)
 
