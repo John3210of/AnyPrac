@@ -20,3 +20,9 @@ def solution(s):
     return count
 s="[](){}"
 print(solution(s))
+
+times=6
+goal=15
+
+for tri in range(1,times+1):
+    print(2*(tri)+3*(6-tri))

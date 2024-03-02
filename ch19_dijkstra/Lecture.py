@@ -5,8 +5,6 @@
 # 간선에는 비용이 적혀있다.디폴트값은 무한대.
 # 이동하고 가장 작은 값으로부터의 비용을 다시 체크한다.
 
-
-#
 # def dijkstra_naive(graph, start):
 #     def get_smallest_node():
 #         min_value = INF
