@@ -28,21 +28,40 @@ n = 3
 print(hanoi(n, 1, 3))
 
 
-def hanoi(num_discs, source, target, auxiliary):
-    stack = [(num_discs, source, target, auxiliary)]
-    moves = []
+# def hanoi(num_discs, source, target, auxiliary):
+#     stack = [(num_discs, source, target, auxiliary)]
+#     moves = []
 
-    while stack:
-        print(stack[0][1],stack[0][2])
-        discs, src, dest, aux = stack.pop()
-        if discs == 1:
-            moves.append((src, dest))
-        else:
-            stack.append((discs - 1, src, aux, dest))
-            stack.append((1, src, dest, aux))
-            stack.append((discs - 1, aux, dest, src))
-    return moves
+#     while stack:
+#         print(stack[0][1],stack[0][2])
+#         discs, src, dest, aux = stack.pop()
+#         if discs == 1:
+#             moves.append((src, dest))
+#         else:
+#             stack.append((discs - 1, src, aux, dest))
+#             stack.append((1, src, dest, aux))
+#             stack.append((discs - 1, aux, dest, src))
+#     return moves
 
-num_discs = 3
-source, target, auxiliary = 1, 3, 2
-print(hanoi(num_discs, source, target, auxiliary))
+# num_discs = 3
+# source, target, auxiliary = 1, 3, 2
+# print(hanoi(num_discs, source, target, auxiliary))
+
+
+def hanoi(n,start,end):
+    answer=[]
+    hanoi_dfs(n,start,end,2,answer)
+    return answer
+
+def hanoi_dfs(n,start,end,sub,answer):
+    if n==1:
+        answer.append([start,end])
+    else:
+        hanoi_dfs(n-1,start,sub,end,answer)
+        answer.append([start,end])
+        hanoi_dfs(n-1,sub,end,start,answer)
+
+def solution(n):
+    return hanoi(n,1,3)
+
+print(solution(2))
