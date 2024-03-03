@@ -64,4 +64,4 @@ def hanoi_dfs(n,start,end,sub,answer):
 def solution(n):
     return hanoi(n,1,3)
 
-print(solution(2))
+print(solution(3))
