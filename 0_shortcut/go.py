@@ -1,3 +1,24 @@
+def decimal_to_n(decimal_num,n): # 10>n 진법 변환
+    if decimal_num=='0':
+        return '0'
+    convert_str=''
+    while decimal_num:
+        convert_str+=str(decimal_num%n)
+        decimal_num//=n
+    return convert_str[::-1]
+
+def is_prime(number): # 소수판별
+    if number == 2:
+        return True
+    if number <= 1:
+        return False
+    if number%2 ==0:
+        return False
+    for i in range(3, int(number ** 0.5) + 1, 2):
+        if number % i == 0:
+            return False
+    return True
+
 ############### 정규 표현식 활용법 # 정렬문제
 import re
 
