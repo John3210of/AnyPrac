@@ -1,11 +1,22 @@
-def decimal_to_n(decimal_num,n): # 10>n 진법 변환
-    if decimal_num=='0':
+def convert(n, base):
+    T = "0123456789ABCDEF"
+    q, r = divmod(n, base)
+    if q == 0:
+        return T[r]
+    else:
+        return convert(q, base) + T[r]
+
+def convert_to_base_n(number, base):
+    if number == 0:
         return '0'
-    convert_str=''
-    while decimal_num:
-        convert_str+=str(decimal_num%n)
-        decimal_num//=n
-    return convert_str[::-1]
+    result = ''
+    while number > 0:
+        number, remainder = divmod(number, base)
+        if remainder < 10:
+            result = str(remainder) + result
+        else:
+            result = chr(remainder - 10 + ord('A')) + result
+    return result
 
 def is_prime(number): # 소수판별
     if number == 2:
