@@ -8,7 +8,6 @@ def dfs(s):
         print('while graph[s] pop(0)',a)
         print('graph',graph)
         dfs(a)
-
     answer.append(s)
     print('if not graph : ',s)
     return

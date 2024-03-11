@@ -1,5 +1,4 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/87946?language=python3 피로도
-
 from itertools import permutations
 
 k=80
