@@ -1,3 +1,24 @@
+from itertools import permutations
+
+def generate_permutations(s):
+    # 문자열 s의 모든 순열을 생성하여 리스트로 반환
+    return [''.join(permutation) for permutation in permutations(s)]
+
+# 예시
+s = "abc"
+all_permutations = generate_permutations(s)
+print(all_permutations)
+
+from itertools import permutations
+def generate_permutations(s, length):
+    # 문자열 s의 길이가 length인 모든 순열을 생성하여 리스트로 반환
+    return [''.join(permutation) for permutation in permutations(s, length)]
+s = "abc"
+n = len(s)
+all_permutations = []
+for length in range(1, n + 1):
+    all_permutations.extend(generate_permutations(s, length))
+
 def convert(n, base):
     T = "0123456789ABCDEF"
     q, r = divmod(n, base)
@@ -44,9 +65,7 @@ import sys
 input = sys.stdin.readline
 home = list(map(int, input().split()))
 
-
 # 스플릿의 경우 .strip() 붙여주면 \n을 방지할수 있다.
-
 
 ############### 링크드리스트 구현
 # https://koosco.tistory.com/80
@@ -119,7 +138,6 @@ class L_List:
         else:
             print('empty')
 
-
 ###################### 이진탐색
 start = 0
 end = len(lst)
@@ -136,7 +154,6 @@ while start < end:
 ######################이진탐색 내장함수
 import bisect
 
-
 # bisect_left < 원하는 값이 여러개일경우, 가장 왼쪽에 있는
 # 수의 idx를 반환한다.
 def binary_search_builtin(nums, target):
@@ -147,7 +164,6 @@ def binary_search_builtin(nums, target):
     else:  # 만약 없는경우 같거나 큰 가장 첫번째
         # 수의 idx를 반환한다.
         return -1
-
 
 #######################2차원 배열 선언하기
 # COLUM : 가로 길이
@@ -168,7 +184,6 @@ for i in zip(*alist):
 # map과 zip함수를 사용해서 2차원 리스트를 transpose해주는것이 가능하지 않을까?
 # 새로운 리스트에 transpose한 것을 할당해주고 싶다면?
 blist = list(map(list, zip(*alist)))
-
 
 # <output>
 # blist
