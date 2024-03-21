@@ -1,3 +1,25 @@
+from datetime import datetime, timedelta
+
+# Start date is the first day of 2023
+start_date = datetime(2023, 1, 1)
+
+# End date is the last day of 2023
+end_date = datetime(2023, 12, 31)
+
+# Initialize the current date to start date
+current_date = start_date
+
+# Loop through the year
+while current_date <= end_date:
+    # Determine if the current day is a weekend
+    is_weekend = "Weekend" if current_date.weekday() >= 5 else "Weekday"
+    
+    # Print current date, the weekday name, and whether it's a weekend
+    print(f"{current_date.strftime('%Y-%m-%d')} - {current_date.strftime('%A')} - {is_weekend}")
+    
+    current_date += timedelta(days=1)  # Move to the next day
+
+
 from itertools import permutations
 
 def generate_permutations(s):
