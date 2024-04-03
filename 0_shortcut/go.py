@@ -1,3 +1,6 @@
+# 그래프 90도 회전
+def rotate90(arr):
+    return list(zip(*arr[::-1]))
 # 날짜변환
 from datetime import datetime, timedelta
 start_date = datetime(2023, 1, 1)

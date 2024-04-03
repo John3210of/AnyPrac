@@ -95,12 +95,25 @@ def solution(bridge_length, weight, truck_weights):
         if report and time - report[0] >= bridge_length:
             finished.append(report.popleft())
             bridge.popleft()
-        # 다리에 차가없거나, 차가 들어갈 수 있는경우
-        if not bridge or sum(bridge) + truck_weights[0] <= weight:
+        # 차가 들어가는 경우 ( 다리에 차가없거나, 다리에 차가있어도 무게가 허용되는 경우)
+        if truck_weights and (not bridge or sum(bridge) + truck_weights[0] <= weight):
             bridge.append(truck_weights.popleft())
             report.append(time)
-                
     return time
 
+# 6. 주식가격
+def solution(prices):
+    answer = [0] * len(prices)
+    stack = []
+    # 감소했을때, 몇초나 걸렸는지를 우선 저장
+    # 감소하지 않은 친구들에 대해서 보상해줌
+    for i, price in enumerate(prices):
+        while stack and price < prices[stack[-1]]:
+            j = stack.pop()
+            answer[j] = i - j
+        stack.append(i)
+    while stack:
+        j = stack.pop()
+        answer[j] = len(prices) - 1 - j
 
-solution(2, 10, [7,4,5,6])
+    return answer
