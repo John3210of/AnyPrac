@@ -2730,6 +2730,15 @@
     {
         "label": "solution",
         "kind": 2,
+        "importPath": "9rogramers.high_kit.heap",
+        "description": "9rogramers.high_kit.heap",
+        "peekOfCode": "def solution(jobs):\n    answer, now, i = 0, 0, 0\n    start = -1\n    heap = []\n    # [[0, 3], [1, 9], [2, 6]]\n    while i < len(jobs):  # 현재 시점에서 처리할 수 있는 작업을 heap에 저장\n        for j in jobs:\n            if start < j[0] <= now:\n                heapq.heappush(heap, [j[1], j[0]])\n        if len(heap) > 0:  # 처리할 작업이 있는 경우",
+        "detail": "9rogramers.high_kit.heap",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
         "importPath": "9rogramers.high_kit.sort",
         "description": "9rogramers.high_kit.sort",
         "peekOfCode": "def solution(array, commands):\n    answer=[]\n    for start,end,order in commands:\n        answer.append(sorted(array[start-1:end])[order-1])\n    return answer\n# https://school.programmers.co.kr/learn/courses/30/lessons/42746 가장 큰 수\ndef solution(numbers):\n    # 원소의 길이는 최대 4자리 자리수는 최소1개\n    answer=''\n    numbers.sort(key = lambda x: int((str(x)*4)[:4]),reverse=True)",
