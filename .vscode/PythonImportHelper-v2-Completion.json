@@ -2739,6 +2739,15 @@
     {
         "label": "solution",
         "kind": 2,
+        "importPath": "9rogramers.high_kit.heap",
+        "description": "9rogramers.high_kit.heap",
+        "peekOfCode": "def solution(operations):\n    # 최대힙과 최소힙 두개를 구해서 각각의 0번 인덱스를 answer로 return\n    # python은 기본적으로 최소힙을 지원하므로 max_heap에는 -부호로 넣어주고 꺼내서 -1을 마지막에 곱해준다.\n    # heap pop을할시에 최소힙에서는 최소값, 최대힙에서는 최대값이 나온다.\n    min_heap=[]\n    max_heap=[]\n    for oper in operations:\n        command, num = oper.split()\n        num = int(num)\n        if command == \"I\":",
+        "detail": "9rogramers.high_kit.heap",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
         "importPath": "9rogramers.high_kit.sort",
         "description": "9rogramers.high_kit.sort",
         "peekOfCode": "def solution(array, commands):\n    answer=[]\n    for start,end,order in commands:\n        answer.append(sorted(array[start-1:end])[order-1])\n    return answer\n# https://school.programmers.co.kr/learn/courses/30/lessons/42746 가장 큰 수\ndef solution(numbers):\n    # 원소의 길이는 최대 4자리 자리수는 최소1개\n    answer=''\n    numbers.sort(key = lambda x: int((str(x)*4)[:4]),reverse=True)",

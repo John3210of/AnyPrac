@@ -36,3 +36,33 @@ def solution(jobs):
             now += 1
 
     return answer // len(jobs)
+
+# 3.이중우선순위큐
+import heapq
+def solution(operations):
+    # 최대힙과 최소힙 두개를 구해서 각각의 0번 인덱스를 answer로 return
+    # python은 기본적으로 최소힙을 지원하므로 max_heap에는 -부호로 넣어주고 꺼내서 -1을 마지막에 곱해준다.
+    # heap pop을할시에 최소힙에서는 최소값, 최대힙에서는 최대값이 나온다.
+    min_heap=[]
+    max_heap=[]
+    
+    for oper in operations:
+        command, num = oper.split()
+        num = int(num)
+        
+        if command == "I":
+            heapq.heappush(min_heap, num)
+            heapq.heappush(max_heap, -num)
+        elif command == "D":
+            if num == 1:
+                if max_heap: 
+                    max_val = -heapq.heappop(max_heap)
+                    min_heap.remove(max_val)
+            elif num == -1:
+                if min_heap:
+                    min_val = heapq.heappop(min_heap)
+                    max_heap.remove(-min_val)
+    if not max_heap:
+        return [0,0]
+    
+    return [-heapq.heappop(max_heap),heapq.heappop(min_heap)]
