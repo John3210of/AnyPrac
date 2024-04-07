@@ -874,6 +874,33 @@
         "documentation": {}
     },
     {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.22",
+        "description": "1eetcode.22",
+        "peekOfCode": "class Solution:\n    def dfs(self,n,start_count, end_count,atom,answer):\n        if start_count==n and end_count==n:\n            answer.append(atom)\n            return answer\n        if start_count >= end_count:\n            if start_count < n:\n                self.dfs(n,start_count+1, end_count,atom+\"(\",answer)\n                self.dfs(n,start_count, end_count+1,atom+\")\",answer)\n            else:",
+        "detail": "1eetcode.22",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.46",
+        "description": "1eetcode.46",
+        "peekOfCode": "class Solution:\n    def dfs(self,visited,nums,atom,temp):\n        if len(atom)==len(nums):\n            temp.append(atom[:]) #shallow copy 때문에 \n            return temp\n        for i in range(len(nums)):\n            if visited[i]==0:\n                atom.append(nums[i])\n                visited[i]=1\n                self.dfs(visited,nums,atom,temp)",
+        "detail": "1eetcode.46",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.46",
+        "description": "1eetcode.46",
+        "peekOfCode": "class Solution:\n    def dfs(self, visited, nums, path, result):\n        if len(path) == len(nums):\n            result.append(path[:])\n            return\n        for i in range(len(nums)):\n            if not visited[i]:\n                visited[i] = True\n                path.append(nums[i])\n                self.dfs(visited, nums, path, result)",
+        "detail": "1eetcode.46",
+        "documentation": {}
+    },
+    {
         "label": "input",
         "kind": 5,
         "importPath": "2cote.antena",
