@@ -2703,6 +2703,24 @@
     {
         "label": "solution",
         "kind": 2,
+        "importPath": "9rogramers.high_kit.greedy",
+        "description": "9rogramers.high_kit.greedy",
+        "peekOfCode": "def solution(n, lost, reserve):\n    # stack처럼 꺼내는데, 우측먼저 보는 식으로 하면 가장 효율적일듯\n    # 여벌 체육복을 가져온 학생이 체육복을 도난당했을 수 있습니다> 빌려줄 수 없다.\n    # 해서 n-len(losted) 를 return\n    lost.sort()\n    reserve.sort()\n    losted=[]\n    intersection = list(set(lost) & set(reserve))\n    for item in intersection:\n        lost.remove(item)",
+        "detail": "9rogramers.high_kit.greedy",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "9rogramers.high_kit.greedy",
+        "description": "9rogramers.high_kit.greedy",
+        "peekOfCode": "def solution(name):\n    # A-Z 까지 아스키코드로 변환해서 숫자의 차이가 적은쪽으로 이동시킴\n    # 맨처음 커서는 가장왼쪽, 디폴트는 A로 잡혀있음.\n    # 각 칸수별로 몇번 옮겨야 하는지 세기\n    # A인 구간을 피해서 이동하는데 A-A의 길이가 가장 긴만큼 빼면 될듯?\n    # A=65, Z=90, offset 65로 두고 0~25까지 0~12 0~12 13개 // 13~25 13~1\n    if set(name)=={'A'}:\n        return 0\n    ascii=[i for i in range(13)]+[12-i for i in range(-1,12)]\n    target=[]",
+        "detail": "9rogramers.high_kit.greedy",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
         "importPath": "9rogramers.high_kit.hash",
         "description": "9rogramers.high_kit.hash",
         "peekOfCode": "def solution(nums): #폰켓몬\n    dic={}\n    for i in nums:\n        if i in dic:\n            dic[i] += 1\n        else:\n            dic[i] = 1\n    length=len(nums)//2\n    return min(length,len(dic.keys()))\ndef solution(participant, completion): #완주하지 못한 선수",
