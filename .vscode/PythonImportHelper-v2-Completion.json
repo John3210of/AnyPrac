@@ -2206,6 +2206,51 @@
         "documentation": {}
     },
     {
+        "label": "s",
+        "kind": 5,
+        "importPath": "6oj.15926",
+        "description": "6oj.15926",
+        "peekOfCode": "s = input()       # 괄호로만 구성된 문자열\nvalid = [0] * 1000  # 올바른 괄호 문자열 여부를 저장하는 배열\nmax_length = 0   # 최대 길이\nstack = []  # 스택 초기화\n# 올바른 괄호 문자열 여부 계산\nfor i in range(len(s)):\n    if s[i] == '(':\n        stack.append(i)\n    else:\n        if stack:",
+        "detail": "6oj.15926",
+        "documentation": {}
+    },
+    {
+        "label": "valid",
+        "kind": 5,
+        "importPath": "6oj.15926",
+        "description": "6oj.15926",
+        "peekOfCode": "valid = [0] * 1000  # 올바른 괄호 문자열 여부를 저장하는 배열\nmax_length = 0   # 최대 길이\nstack = []  # 스택 초기화\n# 올바른 괄호 문자열 여부 계산\nfor i in range(len(s)):\n    if s[i] == '(':\n        stack.append(i)\n    else:\n        if stack:\n            valid[i] = valid[stack[-1]] = 1",
+        "detail": "6oj.15926",
+        "documentation": {}
+    },
+    {
+        "label": "max_length",
+        "kind": 5,
+        "importPath": "6oj.15926",
+        "description": "6oj.15926",
+        "peekOfCode": "max_length = 0   # 최대 길이\nstack = []  # 스택 초기화\n# 올바른 괄호 문자열 여부 계산\nfor i in range(len(s)):\n    if s[i] == '(':\n        stack.append(i)\n    else:\n        if stack:\n            valid[i] = valid[stack[-1]] = 1\n            stack.pop()",
+        "detail": "6oj.15926",
+        "documentation": {}
+    },
+    {
+        "label": "stack",
+        "kind": 5,
+        "importPath": "6oj.15926",
+        "description": "6oj.15926",
+        "peekOfCode": "stack = []  # 스택 초기화\n# 올바른 괄호 문자열 여부 계산\nfor i in range(len(s)):\n    if s[i] == '(':\n        stack.append(i)\n    else:\n        if stack:\n            valid[i] = valid[stack[-1]] = 1\n            stack.pop()\n# 최대 길이 계산",
+        "detail": "6oj.15926",
+        "documentation": {}
+    },
+    {
+        "label": "current_length",
+        "kind": 5,
+        "importPath": "6oj.15926",
+        "description": "6oj.15926",
+        "peekOfCode": "current_length = 0  # 현재 길이\nfor i in range(len(s)):\n    if valid[i]:\n        current_length += 1\n        max_length = max(max_length, current_length)\n    else:\n        current_length = 0\nprint(max_length)",
+        "detail": "6oj.15926",
+        "documentation": {}
+    },
+    {
         "label": "solution2",
         "kind": 2,
         "importPath": "6oj.18406",
