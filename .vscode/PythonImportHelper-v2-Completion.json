@@ -261,6 +261,14 @@
         "documentation": {}
     },
     {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
         "label": "deque",
         "importPath": "collections",
         "description": "collections",
@@ -3229,6 +3237,51 @@
         "description": "9rogramers.42839",
         "peekOfCode": "def solution(numbers):\n    n = len(numbers)\n    all_permutations = []\n    answer=0\n    for length in range(1, n + 1):\n        all_permutations.extend(generate_permutations(numbers, length))\n    for i in set(all_permutations):\n        if is_prime(i):\n            answer+=1\n    return answer",
         "detail": "9rogramers.42839",
+        "documentation": {}
+    },
+    {
+        "label": "find",
+        "kind": 2,
+        "importPath": "9rogramers.42861",
+        "description": "9rogramers.42861",
+        "peekOfCode": "def find(parent, node):\n    if parent[node] != node:\n        parent[node] = find(parent, parent[node])\n    return parent[node]\ndef union(parent, rank, x, y):\n    x_root = find(parent, x)\n    y_root = find(parent, y)\n    if rank[x_root] < rank[y_root]:\n        parent[x_root] = y_root\n    elif rank[x_root] > rank[y_root]:",
+        "detail": "9rogramers.42861",
+        "documentation": {}
+    },
+    {
+        "label": "union",
+        "kind": 2,
+        "importPath": "9rogramers.42861",
+        "description": "9rogramers.42861",
+        "peekOfCode": "def union(parent, rank, x, y):\n    x_root = find(parent, x)\n    y_root = find(parent, y)\n    if rank[x_root] < rank[y_root]:\n        parent[x_root] = y_root\n    elif rank[x_root] > rank[y_root]:\n        parent[y_root] = x_root\n    else:\n        parent[y_root] = x_root\n        rank[x_root] += 1",
+        "detail": "9rogramers.42861",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "9rogramers.42861",
+        "description": "9rogramers.42861",
+        "peekOfCode": "def solution(n, costs):\n    # 크루스칼 알고리즘 (MST 최소 신장 트리)\n    # 사이클이 생기지 않도록 간선의 비중치를 고려하여 생성하는 형태\n    # 비용으로 간선 정렬\n    costs.sort(key=lambda x: x[2])\n    parent = [i for i in range(n)]\n    rank = [0] * n\n    total_cost = 0\n    for cost in costs:\n        start, end, c = cost",
+        "detail": "9rogramers.42861",
+        "documentation": {}
+    },
+    {
+        "label": "dfs",
+        "kind": 2,
+        "importPath": "9rogramers.42861",
+        "description": "9rogramers.42861",
+        "peekOfCode": "def dfs(key,answer,node_graph,keys,visited,temp_cost):\n    if len(key) > 1 and key in visited:\n        return\n    if set(visited) == keys:\n        return min(answer,temp_cost)\n    for k in node_graph[key].keys():\n        temp_cost += node_graph[key][k]\n        visited.append(k)\n        dfs(k,answer,node_graph,keys,visited,temp_cost)\n        visited.remove(k)",
+        "detail": "9rogramers.42861",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "9rogramers.42861",
+        "description": "9rogramers.42861",
+        "peekOfCode": "def solution(n, costs):\n    # 1. 다리를 통해 모든 섬이 이어지게만 하면 된다. > 깊이 탐색으로 들어가서 모든 노드가 원소가 될 때까지\n    # 이중 딕셔너리 형태로 >> node = {0 : {1 : 3,2 : 4},...,}\n    # 2. 섬을 이으면서 cost를 기록한다.\n    # 종료조건 = 방문한 노드의 set이 기존 모든 노드를 가지고 있을경우. 하면서 min값을 계속해서 저장시킨다.\n    # dfs에서 할일 : temp_cost를 늘리면서 현재 key에서 다음 key로 넘어간다.\n    node_graph = defaultdict(dict)\n    for cost in costs:\n        node_graph[cost[0]][cost[1]] = cost[2]\n        node_graph[cost[1]][cost[0]] = cost[2]",
+        "detail": "9rogramers.42861",
         "documentation": {}
     },
     {
