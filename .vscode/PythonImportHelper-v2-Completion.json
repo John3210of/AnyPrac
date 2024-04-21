@@ -40,6 +40,14 @@
         "documentation": {}
     },
     {
+        "label": "permutations",
+        "importPath": "itertools",
+        "description": "itertools",
+        "isExtraImport": true,
+        "detail": "itertools",
+        "documentation": {}
+    },
+    {
         "label": "product",
         "importPath": "itertools",
         "description": "itertools",
@@ -904,7 +912,7 @@
         "kind": 6,
         "importPath": "1eetcode.46",
         "description": "1eetcode.46",
-        "peekOfCode": "class Solution:\n    def dfs(self, visited, nums, path, result):\n        if len(path) == len(nums):\n            result.append(path[:])\n            return\n        for i in range(len(nums)):\n            if not visited[i]:\n                visited[i] = True\n                path.append(nums[i])\n                self.dfs(visited, nums, path, result)",
+        "peekOfCode": "class Solution:\n    def permute(self, nums: List[int]) -> List[List[int]]:\n        return [list(perm) for perm in permutations(nums)]",
         "detail": "1eetcode.46",
         "documentation": {}
     },
@@ -924,6 +932,24 @@
         "description": "1eetcode.589",
         "peekOfCode": "class Solution:\n    def dfs(self,node,answer):\n        answer.append(node.val)\n        if len(node.children) == 0:\n            return answer\n        for child in node.children:\n            self.dfs(child,answer)\n        return answer\n    def preorder(self, root: 'Node') -> List[int]:\n        # 트리 순회 dfs",
         "detail": "1eetcode.589",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.876",
+        "description": "1eetcode.876",
+        "peekOfCode": "class Solution:\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        # ListNode를 list형태로 만들어서 나머지 절반을 출력한다?\n        # 리스트 길이//2 + 1 번째 부터 출력 \n        # return 형이 listNode 여야 하나봐\n        if head.next is None:\n            return [head.val]\n        linked_list=[]\n        while head.next is not None:\n            linked_list.append(head.val)",
+        "detail": "1eetcode.876",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.876",
+        "description": "1eetcode.876",
+        "peekOfCode": "class Solution:\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        # ListNode를 list형태로 만들어서 나머지 절반을 출력한다?\n        # 리스트 길이//2 + 1 번째 부터 출력 \n        # return 형이 listNode 여야 하나봐\n        head_coppied = head\n        if head.next is None:\n            return head\n        count=0\n        while head.next is not None:",
+        "detail": "1eetcode.876",
         "documentation": {}
     },
     {

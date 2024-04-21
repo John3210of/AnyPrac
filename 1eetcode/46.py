@@ -1,5 +1,4 @@
 # https://leetcode.com/problems/permutations/description/
-
 import sys
 sys.setrecursionlimit(100000)
 class Solution:
@@ -29,25 +28,7 @@ class Solution:
             answer.extend(self.dfs(visited,nums,[num],temp))
             visited[i]=0
         return answer
-
-import sys
-sys.setrecursionlimit(100000)
-
+from itertools import permutations
 class Solution:
-    def dfs(self, visited, nums, path, result):
-        if len(path) == len(nums):
-            result.append(path[:])
-            return
-        for i in range(len(nums)):
-            if not visited[i]:
-                visited[i] = True
-                path.append(nums[i])
-                self.dfs(visited, nums, path, result)
-                path.pop()
-                visited[i] = False
-
     def permute(self, nums: List[int]) -> List[List[int]]:
-        result = []
-        visited = [False] * len(nums)
-        self.dfs(visited, nums, [], result)
-        return result
+        return [list(perm) for perm in permutations(nums)]

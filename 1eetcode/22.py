@@ -18,6 +18,6 @@ class Solution:
         # 괄호쌍의 개수가 각각 n개가 될 때까지 dfs로?
         # 진행중인 )의 개수는 항상 (의 갯수 까지만 가능함
         # 종료조건 : (,) 의 개수가 모두 n이 될 때
-        answer=[]
+        answer = []
         answer = self.dfs(n,1,0,'(',answer)
         return answer
