@@ -31,15 +31,12 @@ class Solution:
         head_coppied = head
         if head.next is None:
             return head
-        
         count=0
-
         while head.next is not None:
             count+=1
             head=head.next
         else:
             count+=1
-
         for _ in range(count//2):
             head_coppied=head_coppied.next
         return head_coppied

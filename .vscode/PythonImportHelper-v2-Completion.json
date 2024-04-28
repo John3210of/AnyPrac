@@ -3032,6 +3032,24 @@
         "documentation": {}
     },
     {
+        "label": "get_common_list",
+        "kind": 2,
+        "importPath": "9rogramers.135807",
+        "description": "9rogramers.135807",
+        "peekOfCode": "def get_common_list(arrayN):\n    arrayN.sort()\n    n_common = arrayN[0]\n    n_list=[]\n    for i in range(1,n_common//2+1):\n        if n_common % i == 0:\n            n_list.append(i)\n    n_list.append(n_common)\n    result=[]\n    for c in n_list:",
+        "detail": "9rogramers.135807",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "9rogramers.135807",
+        "description": "9rogramers.135807",
+        "peekOfCode": "def solution(arrayA, arrayB):\n    # 정렬된 a리스트의 0번 요소에 대한 약수를 모두 구한다.\n    # 약수들을 돌리면서 모든 원소의 공통약수인 리스트를 구한다.\n    # 정렬된 b리스트의 0번 요소에 대한 약수를 모두 구한다.\n    # 약수들을 돌리면서 모든 원소의 공통약수인 리스트를 구한다.\n    # 두 리스트를 비교하며 같지않은 수중에 가장 큰 값을 구한다.\n    # 반대편의 모든수가 나누어 지지 않는 수중에 가장 큰 수\n    # 14 = [1,2,7,14] => 7\n    # 18 = [1,2,3,6,9,18] => 2,3,6\n    # 10 => 1,2,5,10",
+        "detail": "9rogramers.135807",
+        "documentation": {}
+    },
+    {
         "label": "solution",
         "kind": 2,
         "importPath": "9rogramers.148653",
