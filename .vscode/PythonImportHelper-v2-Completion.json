@@ -48,6 +48,14 @@
         "documentation": {}
     },
     {
+        "label": "permutations",
+        "importPath": "itertools",
+        "description": "itertools",
+        "isExtraImport": true,
+        "detail": "itertools",
+        "documentation": {}
+    },
+    {
         "label": "product",
         "importPath": "itertools",
         "description": "itertools",
@@ -530,24 +538,6 @@
         "documentation": {}
     },
     {
-        "label": "Node",
-        "kind": 6,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "class Node:\n    def __init__(self, val):\n        self.val = val\n        self.next = None\n# 리스트 선언\nclass L_List:\n    def __init__(self):\n        self.head = None\n        self.length = 0\n    # 노드가 없을경우에 예외처리",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
-        "label": "L_List",
-        "kind": 6,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "class L_List:\n    def __init__(self):\n        self.head = None\n        self.length = 0\n    # 노드가 없을경우에 예외처리\n    def isempty(self):\n        return not bool(self.head)\n    # 현재 노드의 앞에 입력\n    def add_front(self, val):\n        node = Node(val)",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
         "label": "rotate90",
         "kind": 2,
         "importPath": "0_shortcut.go",
@@ -570,7 +560,7 @@
         "kind": 2,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "def generate_permutations(s, length):\n    # 문자열 s의 길이가 length인 모든 순열을 생성하여 리스트로 반환\n    return [''.join(permutation) for permutation in permutations(s, length)]\ns = \"abc\"\nn = len(s)\nall_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\ndef convert(n, base):\n    T = \"0123456789ABCDEF\"",
+        "peekOfCode": "def generate_permutations(s, length):\n    # 문자열 s의 길이가 length인 모든 순열을 생성하여 리스트로 반환\n    return [''.join(permutation) for permutation in permutations(s, length)]\ns = \"abc\"\nn = len(s)\nall_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\n# n진법 변환\ndef convert(n, base):",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -624,7 +614,7 @@
         "kind": 2,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "def rotated(a):\n    n = len(a)  # row\n    m = len(a[0])  # col\n    result = [[0] * n for _ in range(m)]\n    for i in range(n):\n        for j in range(m):\n            result[j][n - i - 1] = a[i][j]\n    return result\n#######################[Python] 두 리스트(배열) 각 요소들의 값 더하기\n#",
+        "peekOfCode": "def rotated(a):\n    n = len(a)  # row\n    m = len(a[0])  # col\n    result = [[0] * n for _ in range(m)]\n    for i in range(n):\n        for j in range(m):\n            result[j][n - i - 1] = a[i][j]\n    return result\n#######################[Python] 두 리스트(배열) 각 요소들의 값 더하기\n# 1. list comprehension 을 사용하기",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -696,7 +686,7 @@
         "kind": 5,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "s = \"abc\"\nn = len(s)\nall_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\ndef convert(n, base):\n    T = \"0123456789ABCDEF\"\n    result = ''\n    while n > 0:\n        q, r = divmod(n, base)",
+        "peekOfCode": "s = \"abc\"\nn = len(s)\nall_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\n# n진법 변환\ndef convert(n, base):\n    T = \"0123456789ABCDEF\"\n    result = ''\n    while n > 0:",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -705,7 +695,7 @@
         "kind": 5,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "n = len(s)\nall_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\ndef convert(n, base):\n    T = \"0123456789ABCDEF\"\n    result = ''\n    while n > 0:\n        q, r = divmod(n, base)\n        result = T[r] + result",
+        "peekOfCode": "n = len(s)\nall_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\n# n진법 변환\ndef convert(n, base):\n    T = \"0123456789ABCDEF\"\n    result = ''\n    while n > 0:\n        q, r = divmod(n, base)",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -714,7 +704,7 @@
         "kind": 5,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "all_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\ndef convert(n, base):\n    T = \"0123456789ABCDEF\"\n    result = ''\n    while n > 0:\n        q, r = divmod(n, base)\n        result = T[r] + result\n        n = q",
+        "peekOfCode": "all_permutations = []\nfor length in range(1, n + 1):\n    all_permutations.extend(generate_permutations(s, length))\n# n진법 변환\ndef convert(n, base):\n    T = \"0123456789ABCDEF\"\n    result = ''\n    while n > 0:\n        q, r = divmod(n, base)\n        result = T[r] + result",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -723,7 +713,7 @@
         "kind": 5,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "split_str = re.split(r\"([0-9]+)\", string)  # +는 기준으로나오는거 전부다 엮기\n# asdfsdf123123asdfsdf 를 > asdfasdf, 123123, asdfasdf 로 나눠준다.\n# https://whatisthenext.tistory.com/116 를 참고 하면 좋을듯?\n############### input 시간 줄이면서 리스트로 입력 받기\nimport sys\ninput = sys.stdin.readline\nhome = list(map(int, input().split()))\n# 스플릿의 경우 .strip() 붙여주면 \\n을 방지할수 있다.\n############### 링크드리스트 구현\n# https://koosco.tistory.com/80",
+        "peekOfCode": "split_str = re.split(r\"([0-9]+)\", string)  # +는 기준으로나오는거 전부다 엮기\n# asdfsdf123123asdfsdf 를 > asdfasdf, 123123, asdfasdf 로 나눠준다.\n# https://whatisthenext.tistory.com/116 를 참고 하면 좋을듯?\n############### input 시간 줄이면서 리스트로 입력 받기\nimport sys\ninput = sys.stdin.readline\nhome = list(map(int, input().split()))\n# 스플릿의 경우 .strip() 붙여주면 \\n을 방지할수 있다.\n###################### 이진탐색\nstart = 0",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -732,7 +722,7 @@
         "kind": 5,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "input = sys.stdin.readline\nhome = list(map(int, input().split()))\n# 스플릿의 경우 .strip() 붙여주면 \\n을 방지할수 있다.\n############### 링크드리스트 구현\n# https://koosco.tistory.com/80\n# 노드 선언\nclass Node:\n    def __init__(self, val):\n        self.val = val\n        self.next = None",
+        "peekOfCode": "input = sys.stdin.readline\nhome = list(map(int, input().split()))\n# 스플릿의 경우 .strip() 붙여주면 \\n을 방지할수 있다.\n###################### 이진탐색\nstart = 0\nend = len(lst)\ntarget = 4\nwhile start < end:\n    mid = (start + end) // 2\n    if lst[mid] < target:",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -741,7 +731,7 @@
         "kind": 5,
         "importPath": "0_shortcut.go",
         "description": "0_shortcut.go",
-        "peekOfCode": "home = list(map(int, input().split()))\n# 스플릿의 경우 .strip() 붙여주면 \\n을 방지할수 있다.\n############### 링크드리스트 구현\n# https://koosco.tistory.com/80\n# 노드 선언\nclass Node:\n    def __init__(self, val):\n        self.val = val\n        self.next = None\n# 리스트 선언",
+        "peekOfCode": "home = list(map(int, input().split()))\n# 스플릿의 경우 .strip() 붙여주면 \\n을 방지할수 있다.\n###################### 이진탐색\nstart = 0\nend = len(lst)\ntarget = 4\nwhile start < end:\n    mid = (start + end) // 2\n    if lst[mid] < target:\n        start = mid + 1",
         "detail": "0_shortcut.go",
         "documentation": {}
     },
@@ -809,60 +799,6 @@
         "documentation": {}
     },
     {
-        "label": "prime",
-        "kind": 5,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "prime = [True] * 123457 * 2  # 범위만큼 전부 구해놓기\nprime[1] = False\nfor i in range(2, len(prime)):\n    if prime[i]:\n        for j in range(i * 2, len(prime), i):  # 2i, 3i, 4i로 끝까지 가라.\n            prime[j] = False\nwhile True:\n    n = int(input())\n    if n == 0:\n        break",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
-        "label": "prime[1]",
-        "kind": 5,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "prime[1] = False\nfor i in range(2, len(prime)):\n    if prime[i]:\n        for j in range(i * 2, len(prime), i):  # 2i, 3i, 4i로 끝까지 가라.\n            prime[j] = False\nwhile True:\n    n = int(input())\n    if n == 0:\n        break\n    print(sum(prime[n + 1:2 * n + 1]))",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
-        "label": "seq",
-        "kind": 5,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "seq = '12312312312312'\nlength = 3\n[seq[i:i + length] for i in range(0, len(seq), length)]\n# result\n['123', '123', '123', '123', '12']  ##전부다 필요\n#############\nseq = '12312312312312'\nlength = 3\n[''.join(x) for x in zip(*[list(seq[z::length]) for z in range(length)])]\n# result",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
-        "label": "length",
-        "kind": 5,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "length = 3\n[seq[i:i + length] for i in range(0, len(seq), length)]\n# result\n['123', '123', '123', '123', '12']  ##전부다 필요\n#############\nseq = '12312312312312'\nlength = 3\n[''.join(x) for x in zip(*[list(seq[z::length]) for z in range(length)])]\n# result\n['123', '123', '123', '123']  # 잘린 애만 필요",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
-        "label": "seq",
-        "kind": 5,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "seq = '12312312312312'\nlength = 3\n[''.join(x) for x in zip(*[list(seq[z::length]) for z in range(length)])]\n# result\n['123', '123', '123', '123']  # 잘린 애만 필요\n# 딕셔너리\nd.get(x,0) > x가 없으면 0으로 추가\nfor key,val in d.items() > 딕셔너리 key,val값 볼 수 있음\n#set은 hashtable로 이루어져 있다.\ns=set(lost) & set(reserve) #교집합을 의미",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
-        "label": "length",
-        "kind": 5,
-        "importPath": "0_shortcut.go",
-        "description": "0_shortcut.go",
-        "peekOfCode": "length = 3\n[''.join(x) for x in zip(*[list(seq[z::length]) for z in range(length)])]\n# result\n['123', '123', '123', '123']  # 잘린 애만 필요\n# 딕셔너리\nd.get(x,0) > x가 없으면 0으로 추가\nfor key,val in d.items() > 딕셔너리 key,val값 볼 수 있음\n#set은 hashtable로 이루어져 있다.\ns=set(lost) & set(reserve) #교집합을 의미\n#형태 변환 str > int map list",
-        "detail": "0_shortcut.go",
-        "documentation": {}
-    },
-    {
         "label": "count_pairs",
         "kind": 2,
         "importPath": "0_shortcut.test",
@@ -917,6 +853,15 @@
         "documentation": {}
     },
     {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.530",
+        "description": "1eetcode.530",
+        "peekOfCode": "class Solution:\n    # 리스트로 만들어서 정렬후에 +1 자리와 비교?\n    # inorder를 사용할 시에 오름차순 정렬이 된다.\n    # 차이값을 계산하기위해 노드를 2개이상 발견했는지에 대한 판단 필요\n    def __init__(self):\n        self.init = False\n        self.prev = None\n        self.min_val = float('inf')\n    def inorder(self, root: TreeNode):\n        if root is None:",
+        "detail": "1eetcode.530",
+        "documentation": {}
+    },
+    {
         "label": "Node",
         "kind": 6,
         "importPath": "1eetcode.589",
@@ -950,6 +895,60 @@
         "description": "1eetcode.876",
         "peekOfCode": "class Solution:\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        # ListNode를 list형태로 만들어서 나머지 절반을 출력한다?\n        # 리스트 길이//2 + 1 번째 부터 출력 \n        # return 형이 listNode 여야 하나봐\n        head_coppied = head\n        if head.next is None:\n            return head\n        count=0\n        while head.next is not None:",
         "detail": "1eetcode.876",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.98",
+        "description": "1eetcode.98",
+        "peekOfCode": "class Solution:\n    def isValidBST(self, root: TreeNode) -> bool:\n        return self.validate(root, float('-inf'), float('inf'))\n    # 왼쪽 서브트리와 오른쪽 서브트리에 대해 재귀적으로 호출\n    # 현재 노드의 값이 범위 밖에 있는지 확인\n    # 왼쪽 서브트리는 현재 노드의 값보다 작아야 하며, 최대값은 현재 노드의 값이 됨\n    # 오른쪽 서브트리는 현재 노드의 값보다 커야 하며, 최소값은 현재 노드의 값이 됨\n    def validate(self, node, min_val, max_val):\n        if not node:\n            return True",
+        "detail": "1eetcode.98",
+        "documentation": {}
+    },
+    {
+        "label": "TreeNode",
+        "kind": 6,
+        "importPath": "1eetcode.98",
+        "description": "1eetcode.98",
+        "peekOfCode": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\nclass Solution:\n    def check_bst(self, node: Optional[TreeNode],direction):\n        root_val = node.val\n        if direction == 'L':\n            if not node.left.val < node.val:",
+        "detail": "1eetcode.98",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "1eetcode.98",
+        "description": "1eetcode.98",
+        "peekOfCode": "class Solution:\n    def check_bst(self, node: Optional[TreeNode],direction):\n        root_val = node.val\n        if direction == 'L':\n            if not node.left.val < node.val:\n                return False\n            node=node.left\n            if node.left is not None:\n                if not node.left.val < root_val:\n                    return False",
+        "detail": "1eetcode.98",
+        "documentation": {}
+    },
+    {
+        "label": "child",
+        "kind": 5,
+        "importPath": "1eetcode.98",
+        "description": "1eetcode.98",
+        "peekOfCode": "child = TreeNode(val=1)\nparent = TreeNode(val=1,left=child)\nprint(parent.val)\nprint(parent.left.val)\nsolution = Solution.isValidBST(parent)",
+        "detail": "1eetcode.98",
+        "documentation": {}
+    },
+    {
+        "label": "parent",
+        "kind": 5,
+        "importPath": "1eetcode.98",
+        "description": "1eetcode.98",
+        "peekOfCode": "parent = TreeNode(val=1,left=child)\nprint(parent.val)\nprint(parent.left.val)\nsolution = Solution.isValidBST(parent)",
+        "detail": "1eetcode.98",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 5,
+        "importPath": "1eetcode.98",
+        "description": "1eetcode.98",
+        "peekOfCode": "solution = Solution.isValidBST(parent)",
+        "detail": "1eetcode.98",
         "documentation": {}
     },
     {
@@ -2240,6 +2239,123 @@
         "documentation": {}
     },
     {
+        "label": "dfs",
+        "kind": 2,
+        "importPath": "6oj.10026",
+        "description": "6oj.10026",
+        "peekOfCode": "def dfs(graph,visited,size,row,col):\n    # 종료조건 > visited=1\n    if visited[row][col]==1:\n        return\n    visited[row][col]=1\n    dr=[1,-1,0,0]\n    dc=[0,0,1,-1]\n    for i in range(4):\n        next_row = row+dr[i]\n        next_col = col+dc[i]",
+        "detail": "6oj.10026",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "6oj.10026",
+        "description": "6oj.10026",
+        "peekOfCode": "def solution(graph):\n    visited = [[0 for _ in range(len(row))] for row in graph]\n    size=0\n    for row in range(len(graph)):\n        for col in range(len(graph[0])):\n            if visited[row][col]==0:\n                dfs(graph,visited,size,row,col)\n                size+=1\n    return size\nif __name__ == \"__main__\":",
+        "detail": "6oj.10026",
+        "documentation": {}
+    },
+    {
+        "label": "dfs",
+        "kind": 2,
+        "importPath": "6oj.1012",
+        "description": "6oj.1012",
+        "peekOfCode": "def dfs(graph, row, col, visited):\n    dr = [1, -1, 0, 0]\n    dc = [0, 0, 1, -1]\n    # 방문하지 않은 배추인 경우에만 탐색\n    if visited[row][col] == 0 and graph[row][col] == 1:\n        visited[row][col] = 1\n        for i in range(4):\n            next_row = row + dr[i]\n            next_col = col + dc[i]\n            if 0 <= next_row < len(graph) and 0 <= next_col < len(graph[0]):",
+        "detail": "6oj.1012",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "6oj.1012",
+        "description": "6oj.1012",
+        "peekOfCode": "def solution(graph):\n    # 그래프 전체를 탐색하면서 배추 덩어리 찾기\n    # 배추가 있고 방문하지 않은 경우에만 DFS 탐색 수행\n    count = 0\n    visited = [[0] * len(graph[0]) for _ in range(len(graph))]\n    for row in range(len(graph)):\n        for col in range(len(graph[0])):\n            if graph[row][col] == 1 and visited[row][col] == 0:\n                dfs(graph, row, col, visited)\n                count += 1",
+        "detail": "6oj.1012",
+        "documentation": {}
+    },
+    {
+        "label": "backtracking",
+        "kind": 2,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "def backtracking(k):\n    if k == m:\n        print(*result)\n        return\n    remember = 0\n    for i in range(n):\n        if not visited[i] and remember != nums[i] :\n            visited[i] = True\n            result.append(nums[i])\n            remember = nums[i]",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "dfs",
+        "kind": 2,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "def dfs(index,m,numbers,temp):\n    # 종료조건 : 할당 개수를 채웠거나, 남아있는 수의 개수가 추가 해야 할 개수보다 적으면 중지\n    if len(temp)==m or sum(numbers)+len(temp)<m or numbers[index]<1:\n        return\n    # 해야할일 : 지금 위치를 temp에 더하고, 리스트의 끝까지 재귀 탐색시키기\n    numbers[index]-=1\n    print(numbers)\n    temp.append(index)\n    for i in range(len(numbers)):\n        dfs(i,m,numbers[:],temp)",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "def solution(m,lst):\n    numbers=[0]*(max(lst)+1)\n    print(max(lst))\n    answer=[]\n    for i in lst:\n        numbers[i]+=1\n    for i in range(len(numbers)):\n        if numbers[i]!=0:\n            temp=[]\n            dfs(i,m,numbers[:],temp)",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "input = sys.stdin.readline\nn, m = map(int, input().split())\nnums = list(map(int, input().split()))\nvisited = [False] * n\nnums.sort()\nresult = []\ndef backtracking(k):\n    if k == m:\n        print(*result)\n        return",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "nums",
+        "kind": 5,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "nums = list(map(int, input().split()))\nvisited = [False] * n\nnums.sort()\nresult = []\ndef backtracking(k):\n    if k == m:\n        print(*result)\n        return\n    remember = 0\n    for i in range(n):",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "visited",
+        "kind": 5,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "visited = [False] * n\nnums.sort()\nresult = []\ndef backtracking(k):\n    if k == m:\n        print(*result)\n        return\n    remember = 0\n    for i in range(n):\n        if not visited[i] and remember != nums[i] :",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "result = []\ndef backtracking(k):\n    if k == m:\n        print(*result)\n        return\n    remember = 0\n    for i in range(n):\n        if not visited[i] and remember != nums[i] :\n            visited[i] = True\n            result.append(nums[i])",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "numbers = list(map(int, input().split()))\n# N, M=4,2\n# numbers=[9,7,9,1]\nfor perm in sorted(set(permutations(numbers, M))):\n    print(*perm)\n# 초안\nimport sys\nsys.setrecursionlimit(100000)\ninput = sys.stdin.readline\n# 조합의 길이가 m이 될때까지 탐색한다.",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "6oj.15663",
+        "description": "6oj.15663",
+        "peekOfCode": "input = sys.stdin.readline\n# 조합의 길이가 m이 될때까지 탐색한다.\n# 1~8까지의 리스트를 가지고 리스트 전체를 순회하면서 1개씩 찾는다.\n# 제자리부터 ~ 리스트의 끝까지를 탐색한다.\ndef dfs(index,m,numbers,temp):\n    # 종료조건 : 할당 개수를 채웠거나, 남아있는 수의 개수가 추가 해야 할 개수보다 적으면 중지\n    if len(temp)==m or sum(numbers)+len(temp)<m or numbers[index]<1:\n        return\n    # 해야할일 : 지금 위치를 temp에 더하고, 리스트의 끝까지 재귀 탐색시키기\n    numbers[index]-=1",
+        "detail": "6oj.15663",
+        "documentation": {}
+    },
+    {
         "label": "s",
         "kind": 5,
         "importPath": "6oj.15926",
@@ -2336,6 +2452,33 @@
         "description": "6oj.18406",
         "peekOfCode": "phone_number3 = '+82-10-1234-5678'\ndef solution(phone_number):\n    # 유형 1의 경우 010으로 시작하며 -4자리-4자리 숫자 존재한다.\n    # 유형 2의 경우 010으로 시작하며 8자리 숫자 존재한다.\n    # 유형 3의 경우 +82-10-4자리-4자리 숫자 존재한다.\n    answer = 1\n    return answer",
         "detail": "6oj.18406",
+        "documentation": {}
+    },
+    {
+        "label": "find_max_budget",
+        "kind": 2,
+        "importPath": "6oj.2512",
+        "description": "6oj.2512",
+        "peekOfCode": "def find_max_budget(lst, budget):\n    start = 0\n    end = max(lst)\n    result = 0\n    while start <= end:\n        mid = (start + end) // 2\n        total = 0\n        for req in lst:\n            total += min(req, mid)\n        if total <= budget:",
+        "detail": "6oj.2512",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "6oj.2512",
+        "description": "6oj.2512",
+        "peekOfCode": "input = sys.stdin.readline\nn=int(input())\nlst=list(map(int, input().strip().split()))\nburget=int(input())\nlst.sort()\nif burget >= sum(lst):\n    print(max(lst))\nelse:\n    val=burget//len(lst)\n    remain=0",
+        "detail": "6oj.2512",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "6oj.2579",
+        "description": "6oj.2579",
+        "peekOfCode": "def solution(lst):\n    # 계단을 연속은 2개씩만 가능, 연속 2개 이후에는 2칸을 가야함. 마지막칸은 무조건 밟아야함\n    # dfs로 끝까지 간 이후에 최대 수를 갱신하는 식으로 푸는거인듯?\n    # dp로 풀어야한다.\n    return 0\nif __name__ == \"__main__\":\n    input = sys.stdin.readline\n    n = int(input())\n    lst=[]\n    for _ in range(n):",
+        "detail": "6oj.2579",
         "documentation": {}
     },
     {
