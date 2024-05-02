@@ -2455,6 +2455,42 @@
         "documentation": {}
     },
     {
+        "label": "bfs",
+        "kind": 2,
+        "importPath": "6oj.1926",
+        "description": "6oj.1926",
+        "peekOfCode": "def bfs(row, col, visited, graph):\n    stack = [(row, col)]\n    area = 0\n    while stack:\n        r, c = stack.pop()\n        if visited[r][c] == 1:\n            continue\n        visited[r][c] = 1\n        area += 1\n        dr = [1, -1, 0, 0]",
+        "detail": "6oj.1926",
+        "documentation": {}
+    },
+    {
+        "label": "dfs",
+        "kind": 2,
+        "importPath": "6oj.1926",
+        "description": "6oj.1926",
+        "peekOfCode": "def dfs(row,col,visited,graph,area):\n    # 종료조건 > visited 일때?\n    if visited[row][col]==1:\n        return 0\n    # do something\n    visited[row][col]=1\n    area+=1\n    # dfs seacrch\n    dr=[1,-1,0,0]\n    dc=[0,0,1,-1]",
+        "detail": "6oj.1926",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "6oj.1926",
+        "description": "6oj.1926",
+        "peekOfCode": "input = sys.stdin.readline\n## bfs dp 방식\ndef bfs(row, col, visited, graph):\n    stack = [(row, col)]\n    area = 0\n    while stack:\n        r, c = stack.pop()\n        if visited[r][c] == 1:\n            continue\n        visited[r][c] = 1",
+        "detail": "6oj.1926",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "6oj.1926",
+        "description": "6oj.1926",
+        "peekOfCode": "input = sys.stdin.readline\ndef dfs(row,col,visited,graph,area):\n    # 종료조건 > visited 일때?\n    if visited[row][col]==1:\n        return 0\n    # do something\n    visited[row][col]=1\n    area+=1\n    # dfs seacrch\n    dr=[1,-1,0,0]",
+        "detail": "6oj.1926",
+        "documentation": {}
+    },
+    {
         "label": "find_max_budget",
         "kind": 2,
         "importPath": "6oj.2512",
@@ -2470,15 +2506,6 @@
         "description": "6oj.2512",
         "peekOfCode": "input = sys.stdin.readline\nn=int(input())\nlst=list(map(int, input().strip().split()))\nburget=int(input())\nlst.sort()\nif burget >= sum(lst):\n    print(max(lst))\nelse:\n    val=burget//len(lst)\n    remain=0",
         "detail": "6oj.2512",
-        "documentation": {}
-    },
-    {
-        "label": "solution",
-        "kind": 2,
-        "importPath": "6oj.2579",
-        "description": "6oj.2579",
-        "peekOfCode": "def solution(lst):\n    # 계단을 연속은 2개씩만 가능, 연속 2개 이후에는 2칸을 가야함. 마지막칸은 무조건 밟아야함\n    # dfs로 끝까지 간 이후에 최대 수를 갱신하는 식으로 푸는거인듯?\n    # dp로 풀어야한다.\n    return 0\nif __name__ == \"__main__\":\n    input = sys.stdin.readline\n    n = int(input())\n    lst=[]\n    for _ in range(n):",
-        "detail": "6oj.2579",
         "documentation": {}
     },
     {
@@ -5800,6 +5827,24 @@
         "description": "have_no_idea.17679",
         "peekOfCode": "def solution(m, n, board):\n    board = [list(row) for row in board]\n    while True:\n        removed = set()\n        for i in range(m - 1):\n            for j in range(n - 1):\n                if board[i][j] == board[i][j + 1] == board[i + 1][j] == board[i + 1][j + 1] != '.':\n                    removed |= {(i, j), (i, j + 1), (i + 1, j), (i + 1, j + 1)}\n        for i, j in removed:\n            board[i][j] = '.'",
         "detail": "have_no_idea.17679",
+        "documentation": {}
+    },
+    {
+        "label": "max_score",
+        "kind": 2,
+        "importPath": "have_no_idea.2579",
+        "description": "have_no_idea.2579",
+        "peekOfCode": "def max_score(stairs):\n    n = len(stairs)\n    if n == 1:  # 계단이 한 개일 때는 해당 계단의 점수가 최대 점수\n        return stairs[0]\n    elif n == 2:  # 계단이 두 개일 때는 두 계단의 점수를 합한 값이 최대 점수\n        return stairs[0] + stairs[1]\n    # dp 배열 초기화\n    dp = [0] * n\n    dp[0] = stairs[0]  # 첫 번째 계단의 점수\n    dp[1] = stairs[0] + stairs[1]  # 두 번째 계단까지의 최대 점수",
+        "detail": "have_no_idea.2579",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "have_no_idea.2579",
+        "description": "have_no_idea.2579",
+        "peekOfCode": "input = sys.stdin.readline\n# 못푼 문제\n# DP 문제의 접근방식\n# f(0),f(1),f(2) 를 통해 f(3),…,f(n) 을 수식으로 풀어내는 식으로 한다.\ndef max_score(stairs):\n    n = len(stairs)\n    if n == 1:  # 계단이 한 개일 때는 해당 계단의 점수가 최대 점수\n        return stairs[0]\n    elif n == 2:  # 계단이 두 개일 때는 두 계단의 점수를 합한 값이 최대 점수\n        return stairs[0] + stairs[1]",
+        "detail": "have_no_idea.2579",
         "documentation": {}
     },
     {
