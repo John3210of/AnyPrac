@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/1937
+
 import sys
 sys.setrecursionlimit(3000000)
 input = sys.stdin.readline
@@ -5,6 +7,7 @@ input = sys.stdin.readline
 # 각 분기별로 함수의 실행이 종료될때, max_distance를 갱신해야함
 # 현재 좌표에서 최대거리를 구하고, dp에 저장
 # 현재 좌표에서 다음 좌표로 넘어갈때, dp에 값이 이미 저장되어있다면 1+next_length로 대체가 가능함
+# 더이상 이동이 불가능한 지역을 1로 만들고 return한다. 1로부터 시작해서 1까지 도달하는곳을 2,3,4,..., 거리만큼으로 넓힌다.
 def dfs(graph,row,col,dp):
     if dp[row][col]!=-1:
         return dp[row][col]
@@ -17,9 +20,6 @@ def dfs(graph,row,col,dp):
         if 0<=next_row<len(graph) and 0<=next_col<len(graph[0]) and graph[next_row][next_col] > graph[row][col]:
             max_distance=max(max_distance,dfs(graph,next_row,next_col,dp)+1)
     dp[row][col]=max_distance
-    for i in dp:
-        print(i)
-    print('*'*30)
     return dp[row][col]
 
 
