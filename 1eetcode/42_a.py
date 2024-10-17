@@ -46,11 +46,19 @@ class Solution:
     def trap(self, height: List[int]) -> int:
         if not height:
             return 0
-        l_point, r_point = 0, len(height)-1
-        l_max, r_max = height[l_point], height[r_point]
-        ans = 0
-        while l_point < r_point:
-            if l_max <= r_max:
-                pass
+        
+        l_pointer, r_pointer = 0, len(height) - 1
+        l_max, r_max = height[l_pointer], height[r_pointer]
+        result = 0
+        
+        while l_pointer < r_pointer:
+            if l_max < r_max:
+                l_pointer += 1
+                l_max = max(l_max, height[l_pointer])
+                result += l_max - height[l_pointer]
             else:
-                pass
+                r_pointer -= 1
+                r_max = max(r_max, height[r_pointer])
+                result += r_max - height[r_pointer]
+        
+        return result
